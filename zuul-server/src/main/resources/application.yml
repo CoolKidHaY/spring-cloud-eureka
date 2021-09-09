@@ -1,0 +1,17 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: api-gateway
+zuul:
+  routes:
+    service-provide: /provide/**  # 配置服务请求路径
+    service-consume: /consume/**
+  prefix: /api                    # 设置前缀
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
